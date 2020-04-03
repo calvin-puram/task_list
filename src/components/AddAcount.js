@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const AddAcount = () => {
+  const [fields, setFields] = useState({ text: "", account: "" });
+
   return (
     <div>
       <h6 className='border-bottom mt-3 mb-2'>Add Account Info</h6>
@@ -12,6 +14,8 @@ const AddAcount = () => {
             className='form-control'
             placeholder='Enter Text'
             id='text'
+            value={fields.text}
+            onChange={e => setFields({ ...fields, text: e.target.value })}
           />
         </div>
 
@@ -24,6 +28,8 @@ const AddAcount = () => {
             className='form-control'
             placeholder='Enter Account Details...'
             id='account'
+            value={fields.account}
+            onChange={e => setFields({ ...fields, account: e.target.value })}
           />
         </div>
 
