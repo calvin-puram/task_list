@@ -5,9 +5,11 @@ import Statement from "./components/Statement";
 import AccountStatement from "./components/AccountDetails";
 import AddAccount from "./components/AddAcount";
 
+import { GlobalProvider } from "./context/GlobalState";
+
 const App = () => {
   return (
-    <div>
+    <GlobalProvider>
       <Header />
       <div className='container'>
         <div className='row'>
@@ -19,7 +21,7 @@ const App = () => {
           </div>
         </div>
       </div>
-    </div>
+    </GlobalProvider>
   );
 };
 
