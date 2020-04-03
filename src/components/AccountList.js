@@ -1,9 +1,6 @@
-import React, { useContext } from "react";
-import { GlobalContext } from "../context/GlobalState";
+import React from "react";
 
-const AccountList = () => {
-  const { transactions } = useContext(GlobalContext);
-
+const AccountList = ({ transactions, deleteItem }) => {
   return transactions.map(trans => {
     return (
       <li
@@ -13,7 +10,10 @@ const AccountList = () => {
           borderRight: trans.amount < 0 ? "2px solid red" : "2px solid green"
         }}
       >
-        <button className='btn btn-danger btn-sm rounded-50 float-left'>
+        <button
+          className='btn btn-danger btn-sm rounded-50 float-left'
+          onClick={() => deleteItem(trans.id)}
+        >
           X
         </button>
         <div className='d-flex justify-content-between align-items-center'>
