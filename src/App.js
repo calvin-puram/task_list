@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Balance from "./components/Balance";
 import Statement from "./components/Statement";
 import AccountStatement from "./components/AccountDetails";
+import AddAccount from "./components/AddAcount";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
             <Balance />
             <Statement />
             <AccountStatement />
+            <AddAccount />
           </div>
         </div>
       </div>
